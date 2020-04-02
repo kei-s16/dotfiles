@@ -7,10 +7,10 @@
 - Python3
 
 ## インストール
-'''sh
+```sh
 cd dotfiles
 sh link.sh
-'''
+```
 
 ## 注意事項
 ・nvimrcのpython3_host_progのところ環境に合わせて書き換え（あとで楽にしたい）
