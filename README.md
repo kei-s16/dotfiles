@@ -9,7 +9,7 @@
 ## インストール
 ```sh
 cd dotfiles
-sh link.sh
+sh ./link.sh
 ```
 
 ## 注意事項

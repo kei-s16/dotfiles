@@ -5,8 +5,21 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 hook_add = 'let g:deoplete#enable_at_startup = 1'
 
+# LSP
 [[plugins]]
-repo = 'Shougo/denite.nvim'
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+hook_add = '''
+	let g:lsp_settings_server_dir = '~/.lspServers'
+'''
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
 
 # 日本語関連のあれこれ
 [[plugins]]

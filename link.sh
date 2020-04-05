@@ -2,10 +2,11 @@
 mkdir ~/.zsh
 mkdir -p ~/.config/nvim
 mkdir ~/.eskk
+mkdir ~/.lspServers
 
 touch ~/.zsh/histfile
 touch ~/.eskk/USER.L
-curl http://openlab.ring.gr.jp/skk/skk/dic/SKK-JISYO.L > ~/.eskk/SKK-JISYO.L
+curl http://openlab.jp/skk/skk/dic/SKK-JISYO.L -O > ~/.eskk/SKK-JISYO.L
 
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/neovim/nvimrc ~/.config/nvim/init.vim

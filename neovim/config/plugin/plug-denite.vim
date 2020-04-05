@@ -1,5 +1,5 @@
-nmap <silent> <C-j><C-o> :Denite file/rec<CR>
-nmap <silent> <C-j><C-r> :Denite file/old<CR>
+nmap <silent> <C-j><C-o> :<C-u>Denite file/rec -split=floating_relative<CR>
+nmap <silent> <C-j><C-r> :<C-u>Denite file/old -split=floating_relative<CR>
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
@@ -17,3 +17,6 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
 endfunction
+
+let s:denite_win_width_percent = 0.8
+let s:denite_win_height_percent = 0.8

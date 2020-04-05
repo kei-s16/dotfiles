@@ -3,6 +3,7 @@ scriptencoding utf-8
 set tabstop=8
 set noexpandtab
 set autoindent
+set smartindent
 set backspace=indent,eol,start
 set wrapscan
 set showmatch
@@ -19,6 +20,8 @@ set laststatus=2
 set cmdheight=2
 set showcmd
 set title
+
+set hidden
 
 set encoding=utf-8
 set fileencoding=utf-8
