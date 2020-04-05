@@ -55,7 +55,8 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 precmd(){vcs_info}
 setopt prompt_subst
-PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_} %# '
+PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_}
+%# '
 
 #-----
 
