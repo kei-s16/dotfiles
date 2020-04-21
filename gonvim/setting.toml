@@ -1,0 +1,58 @@
+[Editor]
+Width = 1200
+Height = 800
+
+StartMaximizedWindow = false
+StartFullscreen = false
+
+FontSize = 14
+Linespace = 0
+
+ExtCmdline = false
+ExtPopupmenu = true
+ExtTabline = false
+ExtMessages = false
+
+Clipboard = true
+
+DisableImeInNormal = true
+
+IndentGuide = true
+
+DesktopNotifications = false
+
+Diffdeletepattern = 12
+Diffchangepattern = 12
+Diffaddpattern = 1
+
+[Statusline]
+Visible = false
+
+[Popupmenu]
+ShowDetail = true
+Total = 10
+MenuWidth = 400
+InfoWidth = 2
+DetailWidth = 250
+
+[Tabline]
+Visible = true
+
+[Lint]
+Visible = true
+
+[ScrollBar]
+Visible = true
+
+[MiniMap]
+Visible = true
+
+[SideBar]
+Visible = false
+DropShadow = false
+Width = 200
+
+[Workspace]
+PathStyle = "minimum"
+
+RestoreSession = false
