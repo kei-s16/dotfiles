@@ -1,5 +1,5 @@
-nmap <silent> <C-j><C-o> :<C-u>Denite file/rec -split=floating_relative<CR>
-nmap <silent> <C-j><C-r> :<C-u>Denite file/old -split=floating_relative<CR>
+nmap <silent> <leader>o :<C-u>Denite file/rec<CR>
+nmap <silent> <leader>r :<C-u>Denite file/old<CR>
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()

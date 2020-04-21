@@ -30,3 +30,6 @@ repo = 'tyru/eskk.vim'
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'lifepillar/vim-solarized8'
