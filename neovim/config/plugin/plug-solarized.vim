@@ -1,3 +1,3 @@
-set termguicolors
+" set termguicolors
 set background=light
 colorscheme solarized8

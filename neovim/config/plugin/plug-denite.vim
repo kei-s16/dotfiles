@@ -1,5 +1,8 @@
 nmap <silent> <leader>o :<C-u>Denite file/rec<CR>
 nmap <silent> <leader>r :<C-u>Denite file/old<CR>
+nmap <silent> <leader>b :<C-u>Denite buffer<CR>
+nmap <silent> <leader>f :<C-u>Denite line<CR>
+nmap <silent> <leader>p :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 
 " Define mappings
 autocmd FileType denite call s:denite_my_settings()
