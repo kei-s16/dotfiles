@@ -5,6 +5,9 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 hook_add = 'let g:deoplete#enable_at_startup = 1'
 
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
 # LSP
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
