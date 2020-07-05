@@ -70,7 +70,8 @@ function zle-keymap-select zle-line-init zle-line-finish
             ;;
     esac
 
-    PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_} %# '
+    PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %# '
+    RPROMPT='%~${vcs_info_msg_0_}'
     zle reset-prompt
 }
 
