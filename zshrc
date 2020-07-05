@@ -7,7 +7,6 @@ bindkey -e
 export LANG=ja_JP.UTF-8
 export KCODE=u
 export CLICOLOR=true
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 #-----
 
