@@ -64,7 +64,10 @@ function zle-keymap-select zle-line-init zle-line-finish
             ;;
         vicmd)
             PROMPT_2="$fg[white]-- NORMAL --$reset_color"
-           ;;
+            ;;
+        vivis|vivli)
+            PROMPT_2="$fg[yellow]-- VISUAL --$reset_color"
+            ;;
     esac
 
     PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_} %# '
