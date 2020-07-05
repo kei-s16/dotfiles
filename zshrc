@@ -3,11 +3,10 @@
 #-----
 
 export EDITOR=vim
-bindkey -e
+bindkey -v
 export LANG=ja_JP.UTF-8
 export KCODE=u
 export CLICOLOR=true
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 #-----
 
@@ -54,11 +53,32 @@ left_down_prompt_preexec(){
 
 zstyle ':vcs_info:*' formats '%F{green}[%b]%f'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
-
 precmd(){vcs_info}
 setopt prompt_subst
-PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %~${vcs_info_msg_0_}
-%# '
+
+function zle-keymap-select zle-line-init zle-line-finish
+{
+    case $KEYMAP in
+        main|viins)
+            PROMPT_2="$fg[cyan]-- INSERT --$reset_color"
+            ;;
+        vicmd)
+            PROMPT_2="$fg[white]-- NORMAL --$reset_color"
+            ;;
+        vivis|vivli)
+            PROMPT_2="$fg[yellow]-- VISUAL --$reset_color"
+            ;;
+    esac
+
+    PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}@${fg[blue]}%m${reset_color}(%*%) %# '
+    RPROMPT='%~${vcs_info_msg_0_}'
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+zle -N edit-command-line
 
 #-----
 
