@@ -2,7 +2,7 @@
 
 #-----
 
-export EDITOR=vim
+export EDITOR=nvim
 bindkey -v
 export LANG=ja_JP.UTF-8
 export KCODE=u
