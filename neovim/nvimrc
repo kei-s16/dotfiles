@@ -1,3 +1,5 @@
+let mapleader="\<Space>"
+
 " load dein.vim
 if has("mac")
 	let g:python3_host_prog = expand('/usr/local/bin/python3')
@@ -43,5 +45,4 @@ endif
 
 " load vimrc files
 set runtimepath^=~/dotfiles/neovim/
-runtime! config/basic/*.vim
-runtime! config/plugin/*.vim
+runtime! config/*.vim
