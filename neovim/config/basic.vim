@@ -31,3 +31,5 @@ set ambiwidth=double
 set showbreak=->\ 
 
 set completeopt-=preview
+
+set foldmethod=indent
