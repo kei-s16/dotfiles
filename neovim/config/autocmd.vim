@@ -6,6 +6,7 @@ augroup setFileTypeIndent
 	autocmd FileType dockerfile setlocal expandtab tabstop=4 softtabstop shiftwidth=4
 	autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 	autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType json setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 	autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 augroup END
 
