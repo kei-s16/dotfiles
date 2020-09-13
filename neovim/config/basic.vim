@@ -24,7 +24,7 @@ set title
 set hidden
 
 set encoding=utf-8
-set fileencodings=iso-20222-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-20222-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
