@@ -148,11 +148,11 @@ hook_add = '''
 	let g:eskk#kakutei_when_unique_candidate = 1
 '''
 
-
 [[plugins]]
 repo = 'vim-jp/autofmt'
 hook_add = 'set formatexpr=autofmt#japanese#formatexpr()'
 
+# テーマ
 [[plugins]]
 repo = 'lifepillar/vim-solarized8'
 hook_add = '''
@@ -160,3 +160,7 @@ hook_add = '''
 	set background=light
 	colorscheme solarized8
 '''
+
+# ファイル依存系
+[[plugins]]
+repo = 'mechatroner/rainbow_csv'
