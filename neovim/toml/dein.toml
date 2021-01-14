@@ -156,7 +156,6 @@ hook_add = 'set formatexpr=autofmt#japanese#formatexpr()'
 [[plugins]]
 repo = 'lifepillar/vim-solarized8'
 hook_add = '''
-	set termguicolors
 	set background=light
 	colorscheme solarized8
 '''
