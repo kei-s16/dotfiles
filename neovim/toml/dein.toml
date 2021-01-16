@@ -110,6 +110,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
+hook_add = '''
+	nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
+'''
 
 # Utils
 [[plugins]]
