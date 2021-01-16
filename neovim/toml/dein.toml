@@ -1,5 +1,8 @@
 # Dark Powers Vim Plugins
 [[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 	nmap <silent> <leader>o :<C-u>Denite file/rec<CR>
