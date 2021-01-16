@@ -154,10 +154,10 @@ hook_add = 'set formatexpr=autofmt#japanese#formatexpr()'
 
 # テーマ
 [[plugins]]
-repo = 'lifepillar/vim-solarized8'
+repo = 'altercation/vim-colors-solarized'
 hook_add = '''
 	set background=light
-	colorscheme solarized8
+	colorscheme solarized
 '''
 
 # ファイル依存系
