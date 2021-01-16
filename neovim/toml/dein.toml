@@ -1,3 +1,4 @@
+# Dark Powers Vim Plugins
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -108,6 +109,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/deol.nvim'
+
+# Utils
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
 	nmap <silent> <leader>g :<C-u>Gstatus<CR>
@@ -146,6 +151,9 @@ hook_add = '''
 	let g:eskk#show_candicates_count = 1
 	let g:eskk#show_annotation = 1
 	let g:eskk#kakutei_when_unique_candidate = 1
+
+	let g:eskk#marker_henkan = ".>"
+	let g:eskk#marker_henkan_select = "*>"
 '''
 
 [[plugins]]
