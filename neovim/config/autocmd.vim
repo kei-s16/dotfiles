@@ -1,3 +1,7 @@
+augroup filetypedetect
+	autocmd BufRead,BufNewFile *.tf set filetype=terraform
+augroup END
+
 augroup setFileTypeIndent
 	autocmd!
 	autocmd FileType python setlocal expandtab tabstop=4 softtabstop shiftwidth=4
@@ -9,6 +13,7 @@ augroup setFileTypeIndent
 	autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 	autocmd FileType json setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 	autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType terraform setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 augroup END
 
 augroup runPython
