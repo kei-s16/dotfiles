@@ -2,7 +2,15 @@
 
 #-----
 
-export EDITOR=nvim
+case ${OSTYPE} in
+	msys*)
+		export EDITOR=vim
+		;;
+	*)
+		export EDITOR=nvim
+		;;
+esac
+
 bindkey -v
 export LANG=ja_JP.UTF-8
 export KCODE=u
@@ -86,10 +94,6 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #-----
-alias v=nvim
-alias vi=nvim
-alias vim=nvim
-
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -100,12 +104,26 @@ case ${OSTYPE} in
 		alias la="ls -aG"
 		alias ll="ls -lG"
 		alias lal="ls -laG"
+		alias v=nvim
+		alias vi=nvim
+		alias vim=nvim
 		;;
 	linux*)
 		alias ls='ls --color'
 		alias la='ls -a --color'
 		alias ll='ls -l --color'
 		alias lal='ls -la --color'
+		alias v=nvim
+		alias vi=nvim
+		alias vim=nvim
+		;;
+	msys*)
+		alias ls='ls --color'
+		alias la='ls -a --color'
+		alias ll='ls -l --color'
+		alias lal='ls -la --color'
+		alias v=vim
+		alias vi=vim
 		;;
 esac
 
