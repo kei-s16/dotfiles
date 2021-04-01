@@ -17,7 +17,7 @@ set list
 set listchars=tab:>-,extends:<,trail:-,eol:<
 set wrap
 set laststatus=2
-set cmdheight=2
+set cmdheight=1
 set showcmd
 set title
 
