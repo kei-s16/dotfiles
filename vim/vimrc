@@ -1,0 +1,96 @@
+" basic settings
+scriptencoding utf-8
+
+set tabstop=8
+set noexpandtab
+set autoindent
+set smartindent
+set backspace=indent,eol,start
+set wrapscan
+set showmatch
+set wildmenu
+set formatoptions+=mM
+
+set number
+set cursorline
+set ruler
+set list
+set listchars=tab:>-,extends:<,trail:-,eol:<
+set wrap
+set laststatus=2
+set cmdheight=2
+set showcmd
+set title
+
+set hidden
+
+set encoding=utf-8
+set fileencodings=utf-8,iso-20222-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
+
+set ambiwidth=double
+set showbreak=->\ 
+
+set completeopt-=preview
+
+set foldmethod=indent
+
+" brackets
+imap { {}<LEFT>
+imap ( ()<LEFT>
+imap [ []<LEFT>
+imap < <><LEFT>
+
+" keymaps
+nnoremap <silent> <leader>b : <C-u>buffers<CR>
+nnoremap <silent> <leader>h : <C-u>bprev<CR>
+nnoremap <silent> <leader>l : <C-u>bnext<CR>
+
+" Status bar
+" Left side
+set statusline=%F
+set statusline+=%m
+set statusline+=%r
+set statusline+=%h
+set statusline+=%w
+
+" Right side
+set statusline+=%=
+set statusline+=[%{&fileencoding}]
+set statusline+=[L:%l/%L]
+
+" FileTypes
+augroup filetypedetect
+	autocmd BufRead,BufNewFile *.tf set filetype=terraform
+augroup END
+
+augroup setFileTypeIndent
+	autocmd!
+	autocmd FileType python setlocal expandtab tabstop=4 softtabstop shiftwidth=4
+	autocmd FileType rust setlocal expandtab tabstop=4 softtabstop shiftwidth=4
+	autocmd FileType php setlocal expandtab tabstop=4 softtabstop shiftwidth=4
+	autocmd FileType dockerfile setlocal expandtab tabstop=4 softtabstop shiftwidth=4
+	autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType typescript* setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType json setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+	autocmd FileType terraform setlocal expandtab tabstop=2 softtabstop shiftwidth=2
+augroup END
+
+augroup runPython
+	autocmd!
+	autocmd FileType python nnoremap <buffer> T :term python3 %<CR>
+augroup END
+
+augroup runRust
+	autocmd!
+	autocmd FileType rust compiler cargo
+	autocmd FileType rust nnoremap <buffer> T :make run %<CR>
+augroup END
+
+augroup launchPyls
+	autocmd!
+	autocmd FileType python :call lsp#enable()
+	autocmd FileType python setlocal omnifunc=lsp#complete
+augroup END
