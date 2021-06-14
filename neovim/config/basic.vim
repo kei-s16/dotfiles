@@ -33,3 +33,5 @@ set showbreak=->\
 set completeopt-=preview
 
 set foldmethod=indent
+
+set inccommand=split
