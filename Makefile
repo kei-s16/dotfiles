@@ -13,6 +13,7 @@ install:
 .PHONY: skk
 skk:
 	curl -o ${HOME}/.eskk/SKK-JISYO.L --create-dirs http://openlab.jp/skk/skk/dic/SKK-JISYO.L
+	touch ${HOME}/.eskk/USER.L
 
 clean:
 	@-$(foreach dotfile, $(DOT_FILES), rm -vrf $(HOME)/$(dotfile);)
