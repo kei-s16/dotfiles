@@ -16,3 +16,18 @@ make clean
 ```
 make skk
 ```
+
+## 管理しているもの
+- editor
+  - neovim
+    - goneovim
+  - vim
+- shell
+  - zsh
+- terminal
+  - urxvt
+  - alacritty
+- ssh
+  - tmux
+- others
+  - neofetch
