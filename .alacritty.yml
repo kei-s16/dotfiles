@@ -1,13 +1,11 @@
 font:
   normal:
     family: Rounded M+ 1mn
-    style: Regular
   bold:
     family: Rounded M+ 1mn
-    style: Bold
   italic:
     family: Rounded M+ 1mn
-    style: Thin
+  size: 14.0
 
 # Copy from : https://github.com/eendroroy/alacritty-theme
 # Colors (Solarized Light)
