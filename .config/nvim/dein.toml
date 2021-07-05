@@ -114,6 +114,13 @@ hook_add = '''
 	nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
 '''
 
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+
+# dependencies
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+
 # Utils
 [[plugins]]
 repo = 'tpope/vim-fugitive'
