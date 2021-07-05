@@ -116,6 +116,16 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+hook_add = '''
+	function! s:ddc_my_settings() abort
+		" Use around source.
+		ddc#custom#global('sources', { '_': ['around'] })
+		" Enable default matcher.
+		ddc#custom#source('_', 'matchers', ['matcher_head'])
+		" Use ddc.
+		ddc#enable()
+	endfunction
+'''
 
 # dependencies
 [[plugins]]
