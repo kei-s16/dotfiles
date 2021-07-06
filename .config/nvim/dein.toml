@@ -31,9 +31,9 @@ hook_add = '''
 	let s:denite_win_width_percent = 0.8
 '''
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
@@ -116,6 +116,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
 hook_add = '''
 	function! s:ddc_my_settings() abort
 		" Use around source.
@@ -154,8 +155,8 @@ hook_add = '''
 	let g:lsp_settings_server_dir = '~/.lspServers'
 '''
 
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
+# [[plugins]]
+# repo = 'lighttiger2505/deoplete-vim-lsp'
 
 # 日本語関連のあれこれ
 [[plugins]]
