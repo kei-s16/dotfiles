@@ -31,9 +31,9 @@ hook_add = '''
 	let s:denite_win_width_percent = 0.8
 '''
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# hook_add = 'let g:deoplete#enable_at_startup = 1'
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = 'let g:deoplete#enable_at_startup = 1'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
@@ -114,19 +114,19 @@ hook_add = '''
 	nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
 '''
 
-[[plugins]]
-repo = 'Shougo/ddc.vim'
-depends = ['denops.vim']
-hook_add = '''
-	function! s:ddc_my_settings() abort
-		" Use around source.
-		call ddc#custom#global('sources', { '_': ['around'] })
-		" Enable default matcher.
-		call ddc#custom#source('_', 'matchers', ['matcher_head'])
-		" Use ddc.
-		call ddc#enable()
-	endfunction
-'''
+# [[plugins]]
+# repo = 'Shougo/ddc.vim'
+# depends = ['denops.vim']
+# hook_add = '''
+# 	function! s:ddc_my_settings() abort
+# 		" Use around source.
+# 		call ddc#custom#global('sources', { '_': ['around'] })
+# 		" Enable default matcher.
+# 		call ddc#custom#source('_', 'matchers', ['matcher_head'])
+# 		" Use ddc.
+# 		call ddc#enable()
+# 	endfunction
+# '''
 
 # dependencies
 [[plugins]]
@@ -175,6 +175,12 @@ hook_add = '''
 
 		" refer to doc to add more commands
 	endfunction
+
+	augroup lsp_install
+		au!
+		" call s:on_lsp_buffer_enabled only for languages that has the server registered.
+		autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+	augroup END
 '''
 
 [[plugins]]
@@ -183,8 +189,8 @@ hook_add = '''
 	let g:lsp_settings_server_dir = '~/.lspServers'
 '''
 
-# [[plugins]]
-# repo = 'lighttiger2505/deoplete-vim-lsp'
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
 
 # 日本語関連のあれこれ
 [[plugins]]
