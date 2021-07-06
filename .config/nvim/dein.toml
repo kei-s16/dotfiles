@@ -156,7 +156,6 @@ hook_add = '''
 
 		nmap <buffer> gd <plug>(lsp-definition)
 		nmap <buffer> gr <plug>(lsp-references)
-		nmap <buffer> gt <plug>(lsp-type-definition)
 		nmap <buffer> <leader>c <plug>(lsp-rename)
 		nmap <buffer> [g <plug>(lsp-previous-diagnostic)
 		nmap <buffer> ]g <plug>(lsp-next-diagnostic)
