@@ -6,7 +6,7 @@ if has("mac")
 elseif has("unix")
 	let g:python3_host_prog = expand('/sbin/python')
 elseif has("win64") || has("win32")
-	let g:python3_host_prog = expand('C:/Program Files/Python38/python')
+	let g:python3_host_prog = expand('~/scoop/apps/python/current/python.exe')
 endif
 
 if &compatible
