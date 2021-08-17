@@ -9,6 +9,11 @@ check:
 
 install:
 	@$(foreach dotfile, $(DOT_FILES), ln -sfnv $(abspath $(dotfile)) $(HOME)/$(dotfile);)
+	make emacs
+
+.PHONY: emacs
+emacs:
+	emacs --batch -f batch-byte-compile ~/.emacs.d/init.el
 
 .PHONY: skk
 skk:
