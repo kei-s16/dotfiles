@@ -17,11 +17,17 @@ make clean
 make skk
 ```
 
+### init.elコンパイル
+```
+make emacs
+```
+
 ## 管理しているもの
 - editor
   - neovim
     - goneovim
   - vim
+  - emacs
 - shell
   - zsh
 - terminal
