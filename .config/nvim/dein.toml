@@ -5,30 +5,30 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-	nmap <silent> <leader>o :<C-u>Denite file/rec<CR>
-	nmap <silent> <leader>r :<C-u>Denite file/old<CR>
-	nmap <silent> <leader>b :<C-u>Denite buffer<CR>
-	nmap <silent> <leader>f :<C-u>Denite line<CR>
-	nmap <silent> <leader>p :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+    nmap <silent> <leader>o :<C-u>Denite file/rec<CR>
+    nmap <silent> <leader>r :<C-u>Denite file/old<CR>
+    nmap <silent> <leader>b :<C-u>Denite buffer<CR>
+    nmap <silent> <leader>f :<C-u>Denite line<CR>
+    nmap <silent> <leader>p :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
 
-	" Define mappings
-	autocmd FileType denite call s:denite_my_settings()
-	function! s:denite_my_settings() abort
-		nnoremap <silent><buffer><expr> <CR>
-		\ denite#do_map('do_action')
-		nnoremap <silent><buffer><expr> d
-		\ denite#do_map('do_action', 'delete')
-		nnoremap <silent><buffer><expr> p
-		\ denite#do_map('do_action', 'preview')
-		nnoremap <silent><buffer><expr> q
-		\ denite#do_map('quit')
-		nnoremap <silent><buffer><expr> i
-		\ denite#do_map('open_filter_buffer')
-		nnoremap <silent><buffer><expr> <Space>
-		\ denite#do_map('toggle_select').'j'
-	endfunction
+    " Define mappings
+    autocmd FileType denite call s:denite_my_settings()
+    function! s:denite_my_settings() abort
+        nnoremap <silent><buffer><expr> <CR>
+        \ denite#do_map('do_action')
+        nnoremap <silent><buffer><expr> d
+        \ denite#do_map('do_action', 'delete')
+        nnoremap <silent><buffer><expr> p
+        \ denite#do_map('do_action', 'preview')
+        nnoremap <silent><buffer><expr> q
+        \ denite#do_map('quit')
+        nnoremap <silent><buffer><expr> i
+        \ denite#do_map('open_filter_buffer')
+        nnoremap <silent><buffer><expr> <Space>
+        \ denite#do_map('toggle_select').'j'
+    endfunction
 
-	let s:denite_win_width_percent = 0.8
+    let s:denite_win_width_percent = 0.8
 '''
 
 # [[plugins]]
@@ -38,134 +38,134 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
-	nnoremap <silent> <Leader>n : <C-u>Defx -split=vertical -winwidth=40 -search=`expand('%:p')` `expand('%:p:h')`<CR>
-	autocmd FileType defx call s:defx_my_settings()
-	function! s:defx_my_settings() abort
-		" Define mappings
-		nnoremap <silent><buffer><expr> <CR>
-		\ defx#is_directory() ?
-		\   defx#do_action('open_directory') :
-		\   defx#do_action('multi', ['drop', 'quit'])
-		nnoremap <silent><buffer><expr> c
-		\ defx#do_action('copy')
-		nnoremap <silent><buffer><expr> m
-		\ defx#do_action('move')
-		nnoremap <silent><buffer><expr> p
-		\ defx#do_action('paste')
-		nnoremap <silent><buffer><expr> l
-		\ defx#do_action('open')
-		nnoremap <silent><buffer><expr> E
-		\ defx#do_action('open', 'vsplit')
-		nnoremap <silent><buffer><expr> P
-		\ defx#do_action('preview')
-		nnoremap <silent><buffer><expr> o
-		\ defx#do_action('open_tree', 'toggle')
-		nnoremap <silent><buffer><expr> K
-		\ defx#do_action('new_directory')
-		nnoremap <silent><buffer><expr> N
-		\ defx#do_action('new_file')
-		nnoremap <silent><buffer><expr> M
-		\ defx#do_action('new_multiple_files')
-		nnoremap <silent><buffer><expr> C
-		\ defx#do_action('toggle_columns',
-		\                'mark:indent:icon:filename:type:size:time')
-		nnoremap <silent><buffer><expr> S
-		\ defx#do_action('toggle_sort', 'time')
-		nnoremap <silent><buffer><expr> d
-		\ defx#do_action('remove')
-		nnoremap <silent><buffer><expr> r
-		\ defx#do_action('rename')
-		nnoremap <silent><buffer><expr> !
-		\ defx#do_action('execute_command')
-		nnoremap <silent><buffer><expr> x
-		\ defx#do_action('execute_system')
-		nnoremap <silent><buffer><expr> yy
-		\ defx#do_action('yank_path')
-		nnoremap <silent><buffer><expr> .
-		\ defx#do_action('toggle_ignored_files')
-		nnoremap <silent><buffer><expr> ;
-		\ defx#do_action('repeat')
-		nnoremap <silent><buffer><expr> h
-		\ defx#do_action('cd', ['..'])
-		nnoremap <silent><buffer><expr> ~
-		\ defx#do_action('cd')
-		nnoremap <silent><buffer><expr> q
-		\ defx#do_action('quit')
-		nnoremap <silent><buffer><expr> <Space>
-		\ defx#do_action('toggle_select') . 'j'
-		nnoremap <silent><buffer><expr> *
-		\ defx#do_action('toggle_select_all')
-		nnoremap <silent><buffer><expr> j
-		\ line('.') == line('$') ? 'gg' : 'j'
-		nnoremap <silent><buffer><expr> k
-		\ line('.') == 1 ? 'G' : 'k'
-		nnoremap <silent><buffer><expr> <C-l>
-		\ defx#do_action('redraw')
-		nnoremap <silent><buffer><expr> <C-g>
-		\ defx#do_action('print')
-		nnoremap <silent><buffer><expr> cd
-		\ defx#do_action('change_vim_cwd')
-	endfunction
+    nnoremap <silent> <Leader>n : <C-u>Defx -split=vertical -winwidth=40 -search=`expand('%:p')` `expand('%:p:h')`<CR>
+    autocmd FileType defx call s:defx_my_settings()
+    function! s:defx_my_settings() abort
+        " Define mappings
+        nnoremap <silent><buffer><expr> <CR>
+        \ defx#is_directory() ?
+        \   defx#do_action('open_directory') :
+        \   defx#do_action('multi', ['drop', 'quit'])
+        nnoremap <silent><buffer><expr> c
+        \ defx#do_action('copy')
+        nnoremap <silent><buffer><expr> m
+        \ defx#do_action('move')
+        nnoremap <silent><buffer><expr> p
+        \ defx#do_action('paste')
+        nnoremap <silent><buffer><expr> l
+        \ defx#do_action('open')
+        nnoremap <silent><buffer><expr> E
+        \ defx#do_action('open', 'vsplit')
+        nnoremap <silent><buffer><expr> P
+        \ defx#do_action('preview')
+        nnoremap <silent><buffer><expr> o
+        \ defx#do_action('open_tree', 'toggle')
+        nnoremap <silent><buffer><expr> K
+        \ defx#do_action('new_directory')
+        nnoremap <silent><buffer><expr> N
+        \ defx#do_action('new_file')
+        nnoremap <silent><buffer><expr> M
+        \ defx#do_action('new_multiple_files')
+        nnoremap <silent><buffer><expr> C
+        \ defx#do_action('toggle_columns',
+        \                'mark:indent:icon:filename:type:size:time')
+        nnoremap <silent><buffer><expr> S
+        \ defx#do_action('toggle_sort', 'time')
+        nnoremap <silent><buffer><expr> d
+        \ defx#do_action('remove')
+        nnoremap <silent><buffer><expr> r
+        \ defx#do_action('rename')
+        nnoremap <silent><buffer><expr> !
+        \ defx#do_action('execute_command')
+        nnoremap <silent><buffer><expr> x
+        \ defx#do_action('execute_system')
+        nnoremap <silent><buffer><expr> yy
+        \ defx#do_action('yank_path')
+        nnoremap <silent><buffer><expr> .
+        \ defx#do_action('toggle_ignored_files')
+        nnoremap <silent><buffer><expr> ;
+        \ defx#do_action('repeat')
+        nnoremap <silent><buffer><expr> h
+        \ defx#do_action('cd', ['..'])
+        nnoremap <silent><buffer><expr> ~
+        \ defx#do_action('cd')
+        nnoremap <silent><buffer><expr> q
+        \ defx#do_action('quit')
+        nnoremap <silent><buffer><expr> <Space>
+        \ defx#do_action('toggle_select') . 'j'
+        nnoremap <silent><buffer><expr> *
+        \ defx#do_action('toggle_select_all')
+        nnoremap <silent><buffer><expr> j
+        \ line('.') == line('$') ? 'gg' : 'j'
+        nnoremap <silent><buffer><expr> k
+        \ line('.') == 1 ? 'G' : 'k'
+        nnoremap <silent><buffer><expr> <C-l>
+        \ defx#do_action('redraw')
+        nnoremap <silent><buffer><expr> <C-g>
+        \ defx#do_action('print')
+        nnoremap <silent><buffer><expr> cd
+        \ defx#do_action('change_vim_cwd')
+    endfunction
 '''
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 hook_add = '''
-	nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
+    nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
 '''
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim', 'ddc-around', 'ddc-matcher_head', 'ddc-sorter_rank', 'ddc-nvim-lsp']
 hook_add = '''
-	" Customize global settings
-	" Use around source.
-	" https://github.com/Shougo/ddc-around
-	call ddc#custom#patch_global('sources', ['around', 'nvimlsp'])
+    " Customize global settings
+    " Use around source.
+    " https://github.com/Shougo/ddc-around
+    call ddc#custom#patch_global('sources', ['around', 'nvimlsp'])
 
-	" Use matcher_head and sorter_rank.
-	" https://github.com/Shougo/ddc-matcher_head
-	" https://github.com/Shougo/ddc-sorter_rank
-	call ddc#custom#patch_global('sourceOptions', {
-		      \ '_': {
-		      \   'matchers': ['matcher_head'],
-		      \   'sorters': ['sorter_rank'],
-		      \ },
-		      \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-		      \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
-		      \ })
+    " Use matcher_head and sorter_rank.
+    " https://github.com/Shougo/ddc-matcher_head
+    " https://github.com/Shougo/ddc-sorter_rank
+    call ddc#custom#patch_global('sourceOptions', {
+              \ '_': {
+              \   'matchers': ['matcher_head'],
+              \   'sorters': ['sorter_rank'],
+              \ },
+              \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
+              \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
+              \ })
 
-	" Change source options
-	call ddc#custom#patch_global('sourceOptions', {
-	      \ 'around': {'mark': 'A'},
-	      \ })
-	call ddc#custom#patch_global('sourceParams', {
-	      \ 'around': {'maxSize': 500},
-	      \ 'nvimlsp': {'kindLabels': { 'Class': 'c' }},
-	      \ })
+    " Change source options
+    call ddc#custom#patch_global('sourceOptions', {
+          \ 'around': {'mark': 'A'},
+          \ })
+    call ddc#custom#patch_global('sourceParams', {
+          \ 'around': {'maxSize': 500},
+          \ 'nvimlsp': {'kindLabels': { 'Class': 'c' }},
+          \ })
 
-	" Customize settings on a filetype
-	call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
-	call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
-	      \ 'clangd': {'mark': 'C'},
-	      \ })
-	call ddc#custom#patch_filetype('markdown', 'sourceParams', {
-	      \ 'around': {'maxSize': 100},
-	      \ })
+    " Customize settings on a filetype
+    call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+    call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+          \ 'clangd': {'mark': 'C'},
+          \ })
+    call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+          \ 'around': {'maxSize': 100},
+          \ })
 
-	" Mappings
+    " Mappings
 
-	" <TAB>: completion.
-	inoremap <silent><expr> <TAB>
-	\ pumvisible() ? "\<C-n>" :
-	\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-	\ "\<TAB>" : ddc#manual_complete()
+    " <TAB>: completion.
+    inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+    \ "\<TAB>" : ddc#manual_complete()
 
-	" <S-TAB>: completion back.
-	inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+    " <S-TAB>: completion back.
+    inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-	" Use ddc.
-	call ddc#enable()
+    " Use ddc.
+    call ddc#enable()
 '''
 
 [[plugins]]
@@ -188,9 +188,9 @@ repo = 'vim-denops/denops.vim'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
-	nmap <silent> <leader>g :<C-u>Git<CR>
-	nmap <silent> <leader>L :<C-u>Gclog<CR>
-	nmap <silent> <leader>d :<C-u>Gdiff<CR>
+    nmap <silent> <leader>g :<C-u>Git<CR>
+    nmap <silent> <leader>L :<C-u>Gclog<CR>
+    nmap <silent> <leader>d :<C-u>Gdiff<CR>
 '''
 
 # LSP
@@ -200,43 +200,43 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-	function! s:on_lsp_buffer_enabled() abort
-		setlocal omnifunc=lsp#complete
-		setlocal signcolumn=yes
+    function! s:on_lsp_buffer_enabled() abort
+        setlocal omnifunc=lsp#complete
+        setlocal signcolumn=yes
 
-		if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+        if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 
-		nmap <buffer> gd <plug>(lsp-definition)
-		nmap <buffer> gr <plug>(lsp-references)
-		nmap <buffer> <leader>c <plug>(lsp-rename)
-		nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-		nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-		nmap <buffer> K <plug>(lsp-hover)
+        nmap <buffer> gd <plug>(lsp-definition)
+        nmap <buffer> gr <plug>(lsp-references)
+        nmap <buffer> <leader>c <plug>(lsp-rename)
+        nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+        nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+        nmap <buffer> K <plug>(lsp-hover)
 
-		autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+        autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
 
-		" refer to doc to add more commands
-	endfunction
+        " refer to doc to add more commands
+    endfunction
 
-	augroup lsp_install
-		au!
-		" call s:on_lsp_buffer_enabled only for languages that has the server registered.
-		autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-	augroup END
+    augroup lsp_install
+        au!
+        " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+        autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    augroup END
 
-	let g:asyncomplete_auto_popup = 1
-	let g:asyncomplete_popup_delay = 200
+    let g:asyncomplete_auto_popup = 1
+    let g:asyncomplete_popup_delay = 200
 
-	let g:lsp_format_sync_timeout = 1000
-	let g:lsp_diagnostics_enabled = 1
-	let g:lsp_diagnostics_echo_cursor = 1
-	let g:lsp_text_edit_enabled = 1
+    let g:lsp_format_sync_timeout = 1000
+    let g:lsp_diagnostics_enabled = 1
+    let g:lsp_diagnostics_echo_cursor = 1
+    let g:lsp_text_edit_enabled = 1
 '''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 hook_add = '''
-	let g:lsp_settings_server_dir = '~/.lspServers'
+    let g:lsp_settings_server_dir = '~/.lspServers'
 '''
 
 # [[plugins]]
@@ -249,13 +249,13 @@ repo = 'vim-jp/vimdoc-ja'
 [[plugins]]
 repo = 'tyru/eskk.vim'
 hook_add = '''
-	let g:eskk#directory = expand('~/.eskk')
-	let g:eskk#dictionary = expand('~/.eskk/USER.L')
-	let g:eskk#large_dictionary = expand('~/.eskk/SKK-JISYO.L')
-	let g:eskk#enable_completion = 1
-	let g:eskk#show_candicates_count = 1
-	let g:eskk#show_annotation = 1
-	let g:eskk#kakutei_when_unique_candidate = 1
+    let g:eskk#directory = expand('~/.eskk')
+    let g:eskk#dictionary = expand('~/.eskk/USER.L')
+    let g:eskk#large_dictionary = expand('~/.eskk/SKK-JISYO.L')
+    let g:eskk#enable_completion = 1
+    let g:eskk#show_candicates_count = 1
+    let g:eskk#show_annotation = 1
+    let g:eskk#kakutei_when_unique_candidate = 1
 '''
 
 [[plugins]]
@@ -266,8 +266,8 @@ hook_add = 'set formatexpr=autofmt#japanese#formatexpr()'
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
 hook_add = '''
-	set background=light
-	colorscheme solarized
+    set background=light
+    colorscheme solarized
 '''
 
 # ファイル依存系
