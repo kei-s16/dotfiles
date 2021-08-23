@@ -164,6 +164,18 @@ hook_add = '''
 	call ddc#enable()
 '''
 
+[[plugins]]
+repo = 'Shougo/ddc-around'
+depends = ['denops.vim']
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+depends = ['denops.vim']
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+depends = ['denops.vim']
+
 # dependencies
 [[plugins]]
 repo = 'vim-denops/denops.vim'
