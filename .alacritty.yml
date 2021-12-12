@@ -5,7 +5,7 @@ font:
     family: Rounded M+ 1mn
   italic:
     family: Rounded M+ 1mn
-  size: 16.0
+  size: 12.0
 
 # Copy from : https://github.com/eendroroy/alacritty-theme
 # Colors (Solarized Light)
