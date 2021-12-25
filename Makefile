@@ -8,7 +8,7 @@ check:
 	@$(foreach dotfile, $(DOT_FILES), /bin/ls -dF $(dotfile);)
 
 install:
-	@$(foreach dotfile, $(DOT_FILES), ln -sfnv $(abspath $(dotfile)) $(HOME)/$(dotfile);)
+	@$(foreach dotfile, $(DOT_FILES), ln -sfnv $(abspath $(dotfile)) "$(HOME)/$(dotfile)";)
 
 .PHONY: emacs
 emacs:
