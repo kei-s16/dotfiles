@@ -122,8 +122,9 @@ case ${OSTYPE} in
 		alias la='ls -a --color'
 		alias ll='ls -l --color'
 		alias lal='ls -la --color'
-		alias v=vim
-		alias vi=vim
+		alias v=nvim
+		alias vi=nvim
+		alias vim=nvim
 		;;
 esac
 
