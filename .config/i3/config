@@ -186,4 +186,5 @@ bar {
 }
 
 exec --no-startup-id fcitx5
+exec --no-startup-id flameshot
 exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/archlinux/simple.png"
