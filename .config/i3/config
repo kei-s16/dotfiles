@@ -185,4 +185,9 @@ bar {
         status_command i3status
 }
 
-exec fcitx5
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+
+exec --no-startup-id fcitx5
+exec --no-startup-id flameshot
+exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/archlinux/simple.png"
