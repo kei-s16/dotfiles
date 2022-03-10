@@ -1,4 +1,4 @@
-vim.g.mapleader = '<Space>'
+vim.g.mapleader = ' '
 
 -- dein
 if vim.fn.has('mac') then
@@ -33,9 +33,9 @@ if vim.fn['dein#load_state'](dein_dir) == 1 then
     vim.fn['dein#begin'](dein_dir)
 
     vim.api.nvim_set_var('rc_dir', vim.fn.expand("~/.config/nvim"))
-    vim.api.nvim_set_var('toml', rc_dir .. '/dein.toml')
+    vim.api.nvim_set_var('toml', vim.api.nvim_get_var('rc_dir') .. '/dein.toml')
 
-    vim.fn['dein#load_toml'](toml, {lazy = 0})
+    vim.fn['dein#load_toml'](vim.api.nvim_get_var('toml'), {lazy = 0})
 
     vim.fn['dein#end']()
     vim.fn['dein#save_state']()
