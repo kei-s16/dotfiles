@@ -48,3 +48,7 @@ vim.cmd('syntax enable')
 if not vim.fn['dein#check_install']() == 1 then
     vim.fn['dein#install']()
 end
+
+-- load vimrc files
+vim.opt_global.runtimepath = vim.env.HOME .. '/.config.nvim' .. ',' .. vim.opt_global.runtimepath
+vim.cmd('runtime! rc/*.vim')
