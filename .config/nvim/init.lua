@@ -14,7 +14,7 @@ if vim.opt.compatible:get() == true then
     vim.opt.compatible = false
 end
 
-local dein_dir = vim.env.HOME .. '~/.cache/dein'
+local dein_dir = vim.env.HOME .. '/.cache/dein'
 local dein_repo_dir = dein_dir .. '/repos/github.com/Shougo/dein.vim'
 
 if not string.match(table.concat(vim.opt_global.runtimepath:get()), 'dein.vim') then
@@ -23,9 +23,9 @@ if not string.match(table.concat(vim.opt_global.runtimepath:get()), 'dein.vim') 
     end
 
     if vim.fn.has('win64') or vim.fn.has('win32') then
-        vim.opt_global.runtimepath = dein_repo_dir .. ',' .. vim.opt_global.runtimepath
+        vim.opt_global.runtimepath:append(dein_repo_dir)
     else
-        vim.opt_global.runtimepath = vim.fn.fnamemodify(dein_repo_dir, ':p') .. ',' .. vim.opt_global.runtimepath
+        vim.opt_global.runtimepath:append(vim.fn.fnamemodify(dein_repo_dir, ':p'))
     end
 end
 
@@ -50,5 +50,5 @@ if not vim.fn['dein#check_install']() == 1 then
 end
 
 -- load vimrc files
-vim.opt_global.runtimepath = vim.env.HOME .. '/.config.nvim' .. ',' .. vim.opt_global.runtimepath
+vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config.nvim')
 vim.cmd('runtime! rc/*.vim')
