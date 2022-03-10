@@ -1,4 +1,4 @@
-vim.g.mapleader('<Space>')
+vim.g.mapleader = '<Space>'
 
 -- dein
 if vim.fn.has('mac') then
@@ -17,7 +17,7 @@ end
 local dein_dir = vim.env.HOME .. '~/.cache/dein'
 local dein_repo_dir = dein_dir .. '/repos/github.com/Shougo/dein.vim'
 
-if not string.match(vim.opt_global.runtimepath:get(), 'dein.vim') then
+if not string.match(table.concat(vim.opt_global.runtimepath:get()), 'dein.vim') then
     if vim.fn.isdirectory(dein_repo_dir) then
         os.execute('git clone https://github.com/Shougo/dein.vim ' .. dein_repo_dir)
     end
