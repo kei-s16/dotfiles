@@ -1,37 +1,30 @@
-scriptencoding utf-8
+-- global_options
+vim.opt.backspace = {'indent','eol','start'}
+vim.opt.ruler = true
+vim.opt.listchars = 'tab:>-,extends:<,trail:-,eol:<'
+vim.opt.laststatus = 2
+vim.opt.cmdheight = 1
+vim.opt.showcmd = true
+vim.opt.title = true
+vim.opt.hidden = true
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencodings = {'utf-8','iso-20222-jp','euc-jp,sjis'}
+vim.opt.fileformats = 'unix,dos,mac'
+vim.opt.ambiwidth = 'double'
+vim.opt.showbreak = [[->\ ]]
+vim.opt.completeopt = 'preview'
+vim.opt.inccommand = 'split'
 
-set tabstop=8
-set noexpandtab
-set autoindent
-set smartindent
-set backspace=indent,eol,start
-set wrapscan
-set showmatch
-set wildmenu
-set formatoptions+=mM
+-- buffer_options
+vim.opt.tabstop = 8
+vim.opt.expandtab = false
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.formatoptions:append('mM')
 
-set number
-set cursorline
-set ruler
-set list
-set listchars=tab:>-,extends:<,trail:-,eol:<
-set wrap
-set laststatus=2
-set cmdheight=1
-set showcmd
-set title
-
-set hidden
-
-set encoding=utf-8
-set fileencodings=utf-8,iso-20222-jp,euc-jp,sjis
-set fileformats=unix,dos,mac
-
-set ambiwidth=double
-set showbreak=->\ 
-
-set completeopt-=preview
-
-set foldmethod=indent
-
-set inccommand=split
+-- window_options
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.list = true
+vim.opt.wrap = true
+vim.opt.foldmethod = 'indent'

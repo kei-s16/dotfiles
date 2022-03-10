@@ -49,6 +49,9 @@ if not vim.fn['dein#check_install']() == 1 then
     vim.fn['dein#install']()
 end
 
+-- load lua files
+require('options')
+
 -- load vimrc files
 vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config.nvim')
 vim.cmd('runtime! rc/*.vim')
