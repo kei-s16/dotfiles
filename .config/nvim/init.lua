@@ -1,11 +1,11 @@
 vim.g.mapleader = ' '
 
 -- dein
-if vim.fn.has('mac') then
+if vim.fn.has('mac') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('/usr/local/bin/python3'))
-elseif vim.fn.has('unix') then
+elseif vim.fn.has('unix') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('/sbin/python'))
-elseif vim.fn.has('win64') or vim.fn.has('win32') then
+elseif vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/scoop/apps/python/current/python.exe'))
 end
 
@@ -22,7 +22,7 @@ if not string.match(table.concat(vim.opt_global.runtimepath:get()), 'dein.vim') 
         os.execute('git clone https://github.com/Shougo/dein.vim ' .. dein_repo_dir)
     end
 
-    if vim.fn.has('win64') or vim.fn.has('win32') then
+    if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
         vim.opt_global.runtimepath:append(dein_repo_dir)
     else
         vim.opt_global.runtimepath:append(vim.fn.fnamemodify(dein_repo_dir, ':p'))
