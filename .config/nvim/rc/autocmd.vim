@@ -1,7 +1,3 @@
-augroup filetypedetect
-	autocmd BufRead,BufNewFile *.tf set filetype=terraform
-augroup END
-
 augroup setFileTypeIndent
 	autocmd!
 	autocmd FileType python setlocal expandtab tabstop=4 softtabstop shiftwidth=4
