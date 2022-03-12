@@ -16,20 +16,3 @@ augroup setFileTypeIndent
 	autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 	autocmd FileType terraform setlocal expandtab tabstop=2 softtabstop shiftwidth=2
 augroup END
-
-augroup runPython
-	autocmd!
-	autocmd FileType python nnoremap <buffer> T :term python3 %<CR>
-augroup END
-
-augroup runRust
-	autocmd!
-	autocmd FileType rust compiler cargo
-	autocmd FileType rust nnoremap <buffer> T :make run %<CR>
-augroup END
-
-augroup launchPyls
-	autocmd!
-	autocmd FileType python :call lsp#enable()
-	autocmd FileType python setlocal omnifunc=lsp#complete
-augroup END
