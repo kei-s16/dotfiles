@@ -54,4 +54,4 @@ require('options')
 require('statusline')
 
 -- load vimrc files
-vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config.nvim')
+vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config/nvim')
