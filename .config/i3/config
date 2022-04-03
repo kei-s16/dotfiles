@@ -179,13 +179,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# polybar
 exec_always --no-startup-id $HOME/.config/polybar/startup.sh
 
+# clipboard
 exec --no-startup-id greenclip daemon>/dev/null
 bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
 
+# filer
 bindsym $mod+n exec nemo
 
+# IME
 exec --no-startup-id fcitx5
+
+# screenshot
 exec --no-startup-id flameshot
+
+# wallpaper
 exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/archlinux/simple.png"
