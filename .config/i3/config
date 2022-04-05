@@ -199,3 +199,6 @@ bindsym $mod+Shift+s exec flameshot gui
 
 # wallpaper
 exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/archlinux/simple.png"
+
+# conky
+exec_always --no-startup-id conky --config=$HOME/.config/conky/conky.conf
