@@ -254,22 +254,14 @@ repo = 'williamboman/nvim-lsp-installer'
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo = 'tyru/eskk.vim'
+repo = 'vim-skk/skkeleton'
+depends = ['denops.vim']
 hook_add = '''
-    let g:eskk#directory = expand('~/.eskk')
-    let g:eskk#dictionary = expand('~/.eskk/USER.L')
-    let g:eskk#large_dictionary = expand('~/.eskk/SKK-JISYO.L')
-    let g:eskk#enable_completion = 1
-    let g:eskk#show_candicates_count = 1
-    let g:eskk#show_annotation = 1
-    let g:eskk#kakutei_when_unique_candidate = 1
+    call skkeleton#config({ 'globalJisyo': '~/.eskk/SKK-JISYO.L' })
+    call skkeleton#config({ 'userJisyo': '~/.eskk/USER.L' })
 
-    let g:eskk#marker_henkan = '<>'
-    let g:eskk#marker_henkan_select = '>>'
-
-    call ddc#custom#patch_global(
-    \ 'sources', ['around', 'eskk']
-    \ )
+    imap <C-j> <Plug>(skkeleton-enable)
+    cmap <C-j> <Plug>(skkeleton-enable)
 '''
 
 [[plugins]]
