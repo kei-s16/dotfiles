@@ -31,10 +31,6 @@ hook_add = '''
     let s:denite_win_width_percent = 0.8
 '''
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# hook_add = 'let g:deoplete#enable_at_startup = 1'
-
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 hook_add = '''
@@ -178,21 +174,7 @@ repo = 'Shougo/ddc-matcher_head'
 repo = 'Shougo/ddc-sorter_rank'
 
 [[plugins]]
-repo = 'shun/ddc-vim-lsp'
-hook_post_source = '''
-    call ddc#custom#patch_filetype(
-        \ [
-	\    'python',
-	\    'rust',
-	\    'php',
-	\    'typescript',
-	\    'dockerfile',
-	\    'terraform',
-	\    'yaml',
-	\    'json',
-	\    'markdown'
-	\ ], 'sources', g:vimrc#ddc_sources + ['ddc-vim-lsp'])
-'''
+repo = 'Shougo/ddc-nvim-lsp'
 
 # dependencies
 [[plugins]]
@@ -209,52 +191,10 @@ hook_add = '''
 
 # LSP
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
+repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-hook_add = '''
-    function! s:on_lsp_buffer_enabled() abort
-        setlocal omnifunc=lsp#complete
-        setlocal signcolumn=yes
-
-        if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-
-        nmap <buffer> gd <plug>(lsp-definition)
-        nmap <buffer> gr <plug>(lsp-references)
-        nmap <buffer> <leader>c <plug>(lsp-rename)
-        nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-        nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-        nmap <buffer> K <plug>(lsp-hover)
-
-        autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-
-        " refer to doc to add more commands
-    endfunction
-
-    augroup lsp_install
-        au!
-        " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-        autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-    augroup END
-
-    let g:asyncomplete_auto_popup = 1
-    let g:asyncomplete_popup_delay = 200
-
-    let g:lsp_format_sync_timeout = 1000
-    let g:lsp_diagnostics_enabled = 1
-    let g:lsp_diagnostics_echo_cursor = 1
-    let g:lsp_text_edit_enabled = 1
-'''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-hook_add = '''
-    let g:lsp_settings_server_dir = '~/.lspServers'
-'''
-
-# [[plugins]]
-# repo = 'lighttiger2505/deoplete-vim-lsp'
+repo = 'williamboman/nvim-lsp-installer'
 
 # 日本語関連のあれこれ
 [[plugins]]
