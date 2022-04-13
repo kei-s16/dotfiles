@@ -126,8 +126,14 @@ hook_add = '''
               \   'sorters': ['sorter_rank'],
               \ },
               \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-              \ 'ddc-vim-lsp': {'forceCompletionPattern': '\.', 'minAutoCompleteLength': 0},
               \ })
+
+    call ddc#custom#patch_global('sources', ['nvim-lsp'])
+    call ddc#custom#patch_global('sourceOptions', {
+          \ 'nvim-lsp': {
+          \   'mark': 'lsp',
+          \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
+          \ })
 
     " Change source options
     call ddc#custom#patch_global('sourceOptions', {
@@ -138,10 +144,6 @@ hook_add = '''
           \ })
 
     " Customize settings on a filetype
-    call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
-    call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
-          \ 'clangd': {'mark': 'C'},
-          \ })
     call ddc#custom#patch_filetype('markdown', 'sourceParams', {
           \ 'around': {'maxSize': 100},
           \ })
