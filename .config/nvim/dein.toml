@@ -112,7 +112,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-depends = ['denops.vim', 'ddc-around', 'ddc-matcher_head', 'ddc-sorter_rank', 'ddc-vim-lsp']
+depends = ['denops.vim', 'ddc-around', 'ddc-matcher_head', 'ddc-sorter_rank', 'ddc-nvim-lsp']
 hook_add = '''
     " Customize global settings
     call ddc#custom#patch_global('sources', g:vimrc#ddc_sources)
