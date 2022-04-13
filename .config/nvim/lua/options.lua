@@ -2,7 +2,7 @@
 vim.opt.backspace = {'indent','eol','start'}
 vim.opt.ruler = true
 vim.opt.listchars = 'tab:>-,extends:<,trail:-,eol:<'
-vim.opt.laststatus = 2
+vim.opt.laststatus = 3
 vim.opt.cmdheight = 1
 vim.opt.showcmd = true
 vim.opt.title = true
