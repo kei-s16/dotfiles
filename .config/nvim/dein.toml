@@ -165,9 +165,6 @@ hook_add = '''
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim', 'ddc-around', 'ddc-matcher_head', 'ddc-sorter_rank', 'ddc-nvim-lsp']
 hook_add = '''
-    " Customize global settings
-    call ddc#custom#patch_global('sources', g:vimrc#ddc_sources)
-
     " Use matcher_head and sorter_rank.
     " https://github.com/Shougo/ddc-matcher_head
     " https://github.com/Shougo/ddc-sorter_rank
@@ -216,9 +213,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/ddc-around'
-hook_add = '''
-    let g:vimrc#ddc_sources = add(get(g:, 'vimrc#ddc_sources', []), 'around')
-'''
 
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'
