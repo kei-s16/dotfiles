@@ -7,3 +7,4 @@
 !.config/scoop/
 !.config/systemd/
 !.config/conky/
+!.config/efm-langserver/
