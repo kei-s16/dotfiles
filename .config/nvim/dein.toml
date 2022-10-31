@@ -1,5 +1,4 @@
 # Dark Powered Vim Plugins
-
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
