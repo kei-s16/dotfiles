@@ -55,8 +55,8 @@ if not vim.fn['dein#check_install']() == 1 then
 end
 
 -- load lua files
-require('options')
-require('statusline')
+require('settings.options')
+require('settings.statusline')
 
 -- load lua plugin config
 require('plugins/lsp')
