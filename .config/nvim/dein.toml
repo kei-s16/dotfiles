@@ -1,21 +1,20 @@
 # Dark Powered Vim Plugins
+
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# ddu
 [[plugins]]
 repo = 'Shougo/ddu.vim'
 depends = [
     'denops.vim',
     'ddu-ui-ff',
-    'ddu-source-file_rec',
-    'ddu-source-file_old',
-    'ddu-filter-matcher_substring',
-    'ddu-kind-file',
-    'ddu-source-buffer',
+    'ddu-ui-filer',
     'ddu-commands.vim'
 ]
 hook_add = '''
-    call ddu#custom#patch_global({
+    call ddu#custom#patch_global(
+        \ {
         \   'ui': 'ff',
         \   'sources': [
         \       {'name': 'file_rec', 'params': {}},
@@ -37,6 +36,30 @@ hook_add = '''
         \     },
         \   }
         \ })
+
+    call ddu#custom#patch_global('filer',
+        \ {
+        \   'ui': 'filer',
+        \   'sources': [{'name': 'file', 'params': {}}],
+        \   'sourceOptions': {
+        \     '_': {
+        \       'columns': ['filename'],
+        \     },
+        \   },
+        \   'kindOptions': {
+        \     'filer': {
+        \       'defaultAction': 'open',
+        \     },
+        \   },
+        \   'uiParams': {
+        \     'filer': {
+        \       'winWidth': 40,
+        \       'split': 'vertical',
+        \       'splitDirection': 'topleft',
+        \     }
+        \   }
+        \ })
+
 
     autocmd FileType ddu-ff call s:ddu_my_settings()
     function! s:ddu_my_settings() abort
@@ -60,14 +83,55 @@ hook_add = '''
       \ <Cmd>close<CR>
     endfunction
 
+    autocmd FileType ddu-filer call s:ddu_ui_filer_my_settings()
+    function! s:ddu_ui_filer_my_settings() abort
+      nnoremap <buffer><silent> <CR>
+            \ <Cmd>call ddu#ui#filer#do_action('itemAction')<CR>
+      nnoremap <buffer><silent> <Space>
+            \ <Cmd>call ddu#ui#filer#do_action('toggleSelectItem')<CR>
+      nnoremap <buffer> o
+            \ <Cmd>call ddu#ui#filer#do_action('expandItem',
+            \ {'mode': 'toggle'})<CR>
+      nnoremap <buffer><silent> q
+            \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
+    endfunction
+
+
     nmap <silent> <leader>o :<C-u>Ddu file_rec<CR>
     nmap <silent> <leader>r :<C-u>Ddu file_old<CR>
     nmap <silent> <leader>b :<C-u>Ddu buffer<CR>
+    nmap <silent> <leader>n :<C-u>Ddu filer<CR>
 '''
 
+# ddu-ui
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
+depends = [
+    'ddu-source-file_rec',
+    'ddu-source-file_old',
+    'ddu-filter-matcher_substring',
+    'ddu-kind-file',
+    'ddu-source-buffer'
+]
 
+[[plugin]]
+repo = 'Shougo/ddu-ui-filer'
+depends = [
+    'ddu-source-file',
+    'ddu-kind-file',
+    'ddu-column-filename'
+]
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+
+[[plugins]]
+repo='Shougo/ddu-commands.vim'
+
+[[plugins]]
+repo='Shougo/ddu-column-filename'
+
+# ddu-source
 [[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
 
@@ -75,89 +139,14 @@ repo = 'Shougo/ddu-source-file_rec'
 repo = 'Shougo/ddu-source-file_old'
 
 [[plugins]]
-repo = 'Shougo/ddu-filter-matcher_substring'
-
-[[plugins]]
-repo = 'Shougo/ddu-kind-file'
+repo = 'Shougo/ddu-source-file'
 
 [[plugins]]
 repo='shun/ddu-source-buffer'
 
+# ddu-kind
 [[plugins]]
-repo='Shougo/ddu-commands.vim'
-
-[[plugins]]
-repo = 'Shougo/defx.nvim'
-hook_add = '''
-    nnoremap <silent> <Leader>n : <C-u>Defx -split=vertical -winwidth=40 -search=`expand('%:p')` `expand('%:p:h')`<CR>
-    autocmd FileType defx call s:defx_my_settings()
-    function! s:defx_my_settings() abort
-        " Define mappings
-        nnoremap <silent><buffer><expr> <CR>
-        \ defx#is_directory() ?
-        \   defx#do_action('open_directory') :
-        \   defx#do_action('multi', ['drop', 'quit'])
-        nnoremap <silent><buffer><expr> c
-        \ defx#do_action('copy')
-        nnoremap <silent><buffer><expr> m
-        \ defx#do_action('move')
-        nnoremap <silent><buffer><expr> p
-        \ defx#do_action('paste')
-        nnoremap <silent><buffer><expr> l
-        \ defx#do_action('open')
-        nnoremap <silent><buffer><expr> E
-        \ defx#do_action('open', 'vsplit')
-        nnoremap <silent><buffer><expr> P
-        \ defx#do_action('preview')
-        nnoremap <silent><buffer><expr> o
-        \ defx#do_action('open_tree', 'toggle')
-        nnoremap <silent><buffer><expr> K
-        \ defx#do_action('new_directory')
-        nnoremap <silent><buffer><expr> N
-        \ defx#do_action('new_file')
-        nnoremap <silent><buffer><expr> M
-        \ defx#do_action('new_multiple_files')
-        nnoremap <silent><buffer><expr> C
-        \ defx#do_action('toggle_columns',
-        \                'mark:indent:icon:filename:type:size:time')
-        nnoremap <silent><buffer><expr> S
-        \ defx#do_action('toggle_sort', 'time')
-        nnoremap <silent><buffer><expr> d
-        \ defx#do_action('remove')
-        nnoremap <silent><buffer><expr> r
-        \ defx#do_action('rename')
-        nnoremap <silent><buffer><expr> !
-        \ defx#do_action('execute_command')
-        nnoremap <silent><buffer><expr> x
-        \ defx#do_action('execute_system')
-        nnoremap <silent><buffer><expr> yy
-        \ defx#do_action('yank_path')
-        nnoremap <silent><buffer><expr> .
-        \ defx#do_action('toggle_ignored_files')
-        nnoremap <silent><buffer><expr> ;
-        \ defx#do_action('repeat')
-        nnoremap <silent><buffer><expr> h
-        \ defx#do_action('cd', ['..'])
-        nnoremap <silent><buffer><expr> ~
-        \ defx#do_action('cd')
-        nnoremap <silent><buffer><expr> q
-        \ defx#do_action('quit')
-        nnoremap <silent><buffer><expr> <Space>
-        \ defx#do_action('toggle_select') . 'j'
-        nnoremap <silent><buffer><expr> *
-        \ defx#do_action('toggle_select_all')
-        nnoremap <silent><buffer><expr> j
-        \ line('.') == line('$') ? 'gg' : 'j'
-        nnoremap <silent><buffer><expr> k
-        \ line('.') == 1 ? 'G' : 'k'
-        nnoremap <silent><buffer><expr> <C-l>
-        \ defx#do_action('redraw')
-        nnoremap <silent><buffer><expr> <C-g>
-        \ defx#do_action('print')
-        nnoremap <silent><buffer><expr> cd
-        \ defx#do_action('change_vim_cwd')
-    endfunction
-'''
+repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
