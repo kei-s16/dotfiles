@@ -253,6 +253,17 @@ hook_add = '''
     nmap <silent> <leader>d :<C-u>Gdiff<CR>
 '''
 
+# for cmdheight=0
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
+
+[[plugins]]
+repo = 'rcarriga/nvim-notify'
+
+[[plugins]]
+repo = 'folke/noice.nvim'
+depends = ['nui.vim', 'nvim-notify']
+
 # LSP
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
