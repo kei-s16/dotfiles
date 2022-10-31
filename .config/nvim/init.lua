@@ -59,7 +59,7 @@ require('options')
 require('statusline')
 
 -- load lua plugin config
-require('plugin/lsp')
+require('plugins/lsp')
 
 -- load vimrc files
 vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config/nvim')
