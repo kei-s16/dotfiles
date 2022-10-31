@@ -1,9 +1,7 @@
-if vim.fn.has('mac') == 1 then
-    vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('/usr/local/bin/python3'))
-elseif vim.fn.has('unix') == 1 then
-    vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('/sbin/python'))
-elseif vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
+if vim.fn.has('win64') == 1 or vim.fn.has('win32') == 1 then
     vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/scoop/apps/python/current/python.exe'))
+else
+    vim.api.nvim_set_var('python3_host_prog', vim.fn.expand('~/.asdf/shims/python'))
 end
 
 if vim.opt.compatible:get() == true then
