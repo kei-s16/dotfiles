@@ -9,7 +9,6 @@ repo = 'Shougo/ddu.vim'
 depends = [
     'denops.vim',
     'ddu-ui-ff',
-    'ddu-ui-filer',
     'ddu-commands.vim'
 ]
 hook_add = '''
@@ -37,30 +36,6 @@ hook_add = '''
         \   }
         \ })
 
-    call ddu#custom#patch_global('filer',
-        \ {
-        \   'ui': 'filer',
-        \   'sources': [{'name': 'file', 'params': {}}],
-        \   'sourceOptions': {
-        \     '_': {
-        \       'columns': ['filename'],
-        \     },
-        \   },
-        \   'kindOptions': {
-        \     'filer': {
-        \       'defaultAction': 'open',
-        \     },
-        \   },
-        \   'uiParams': {
-        \     'filer': {
-        \       'winWidth': 40,
-        \       'split': 'vertical',
-        \       'splitDirection': 'topleft',
-        \     }
-        \   }
-        \ })
-
-
     autocmd FileType ddu-ff call s:ddu_my_settings()
     function! s:ddu_my_settings() abort
       nnoremap <buffer><silent> <CR>
@@ -83,24 +58,9 @@ hook_add = '''
       \ <Cmd>close<CR>
     endfunction
 
-    autocmd FileType ddu-filer call s:ddu_ui_filer_my_settings()
-    function! s:ddu_ui_filer_my_settings() abort
-      nnoremap <buffer><silent> <CR>
-            \ <Cmd>call ddu#ui#filer#do_action('itemAction')<CR>
-      nnoremap <buffer><silent> <Space>
-            \ <Cmd>call ddu#ui#filer#do_action('toggleSelectItem')<CR>
-      nnoremap <buffer> o
-            \ <Cmd>call ddu#ui#filer#do_action('expandItem',
-            \ {'mode': 'toggle'})<CR>
-      nnoremap <buffer><silent> q
-            \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
-    endfunction
-
-
     nmap <silent> <leader>o :<C-u>Ddu file_rec<CR>
     nmap <silent> <leader>r :<C-u>Ddu file_old<CR>
     nmap <silent> <leader>b :<C-u>Ddu buffer<CR>
-    nmap <silent> <leader>n :<C-u>Ddu filer<CR>
 '''
 
 # ddu-ui
@@ -114,22 +74,11 @@ depends = [
     'ddu-source-buffer'
 ]
 
-[[plugin]]
-repo = 'Shougo/ddu-ui-filer'
-depends = [
-    'ddu-source-file',
-    'ddu-kind-file',
-    'ddu-column-filename'
-]
-
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
 
 [[plugins]]
 repo='Shougo/ddu-commands.vim'
-
-[[plugins]]
-repo='Shougo/ddu-column-filename'
 
 # ddu-source
 [[plugins]]
@@ -137,9 +86,6 @@ repo = 'Shougo/ddu-source-file_rec'
 
 [[plugins]]
 repo = 'Shougo/ddu-source-file_old'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-file'
 
 [[plugins]]
 repo='shun/ddu-source-buffer'
