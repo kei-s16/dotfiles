@@ -258,11 +258,8 @@ hook_add = '''
 repo = 'MunifTanjim/nui.nvim'
 
 [[plugins]]
-repo = 'rcarriga/nvim-notify'
-
-[[plugins]]
 repo = 'folke/noice.nvim'
-depends = ['nui.vim', 'nvim-notify']
+depends = ['nui.vim']
 
 # LSP
 [[plugins]]
