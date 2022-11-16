@@ -6,7 +6,7 @@
 #
 
 # i3 config file (v4)
-#
+
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -202,3 +202,8 @@ exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/archlinux/simple.png
 
 # conky
 exec_always --no-startup-id conky --config=$HOME/.config/conky/conky.conf
+
+# gaps
+gaps inner 3
+gaps outer 3
+smart_borders on
