@@ -108,16 +108,7 @@ case ${OSTYPE} in
 		alias vi=nvim
 		alias vim=nvim
 		;;
-	linux*)
-		alias ls='ls --color'
-		alias la='ls -a --color'
-		alias ll='ls -l --color'
-		alias lal='ls -la --color'
-		alias v=nvim
-		alias vi=nvim
-		alias vim=nvim
-		;;
-	msys*)
+	*)
 		alias ls='ls --color'
 		alias la='ls -a --color'
 		alias ll='ls -l --color'
