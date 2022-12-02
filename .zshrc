@@ -1,15 +1,17 @@
-# Created by newuser for 5.0.2
+# Created by kei-s16 for 5.0.2
 
-#-----
+# エディタを指定(sudoeditなどで使う)
 export EDITOR=nvim
 
-bindkey -v
+# 国際化まわり
 export LANG=ja_JP.UTF-8
 export KCODE=u
+
+# vim-likeに操作できるようにする
+bindkey -v
+
+# 出力まわり
 export CLICOLOR=true
-
-#-----
-
 autoload -Uz colors
 colors
 
@@ -22,15 +24,12 @@ setopt auto_cd
 setopt list_packed
 setopt list_types
 
-#-----
-
 setopt print_eight_bit
 setopt no_flow_control
 setopt ignore_eof
 setopt correct
 
-#-----
-
+# ログまわり
 HISTFILE=~/.zsh/histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -40,8 +39,7 @@ setopt share_history
 setopt hist_reduce_blanks
 setopt histignorealldups
 
-#-----
-
+# プロンプトまわり
 autoload -Uz add-zsh-hook
 autoload -Uz terminfo
 autoload -Uz vcs_info
@@ -80,34 +78,32 @@ zle -N zle-line-finish
 zle -N zle-keymap-select
 zle -N edit-command-line
 
-#-----
-
+# zsh-completion
 zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-#-----
+# エイリアス
+alias v=nvim
+alias vi=nvim
+alias vim=nvim
+
+# Macとそれ以外でlsの出力が違うので統一する
 case ${OSTYPE} in
 	darwin*)
 		alias ls="ls -G"
 		alias la="ls -aG"
 		alias ll="ls -lG"
 		alias lal="ls -laG"
-		alias v=nvim
-		alias vi=nvim
-		alias vim=nvim
 		;;
 	*)
 		alias ls='ls --color'
 		alias la='ls -a --color'
 		alias ll='ls -l --color'
 		alias lal='ls -la --color'
-		alias v=nvim
-		alias vi=nvim
-		alias vim=nvim
 		;;
 esac
 
-#-----
+# コマンドの編集にnvimを使う
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey "\C-e" edit-command-line
