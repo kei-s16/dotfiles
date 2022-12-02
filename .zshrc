@@ -120,13 +120,6 @@ case ${OSTYPE} in
 esac
 
 #-----
-
-function cd(){
-	builtin cd $@ && ls;
-}
-
-
-#-----
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey "\C-e" edit-command-line
