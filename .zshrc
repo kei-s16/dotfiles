@@ -94,10 +94,6 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #-----
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-
 case ${OSTYPE} in
 	darwin*)
 		alias ls="ls -G"
