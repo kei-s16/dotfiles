@@ -1,15 +1,7 @@
 # Created by newuser for 5.0.2
 
 #-----
-
-case ${OSTYPE} in
-	msys*)
-		export EDITOR=vim
-		;;
-	*)
-		export EDITOR=nvim
-		;;
-esac
+export EDITOR=nvim
 
 bindkey -v
 export LANG=ja_JP.UTF-8
