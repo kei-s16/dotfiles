@@ -1,5 +1,3 @@
-vim.keymap.set('n', '<leader>t',
-  function()
-    vim.cmd('Deol -split=floating -winwidth=120')
-  end
-)
+local keymap = require("utils.keymap").keymap
+
+keymap('n', '<leader>t', ':<C-u>Deol -split=floating -winwidth=120<CR>')
