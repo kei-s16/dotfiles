@@ -95,8 +95,8 @@ repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
-hook_add = '''
-    nnoremap <silent> <Leader>t : <C-u>Deol -split=floating -winwidth=120<CR>
+lua_add = '''
+  require('plugins.deol')
 '''
 
 [[plugins]]
