@@ -179,11 +179,7 @@ repo = 'vim-denops/denops.vim'
 # Utils
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_add = '''
-    nmap <silent> <leader>g :<C-u>Git<CR>
-    nmap <silent> <leader>L :<C-u>Gclog<CR>
-    nmap <silent> <leader>d :<C-u>Gdiff<CR>
-'''
+lua_add = "require('plugins.fugitive')"
 
 # for cmdheight=0
 [[plugins]]
