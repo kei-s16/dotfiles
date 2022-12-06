@@ -194,6 +194,9 @@ repo = 'MunifTanjim/nui.nvim'
 [[plugins]]
 repo = 'folke/noice.nvim'
 depends = ['nui.vim']
+lua_add = '''
+  require('plugins.noice')
+'''
 
 # LSP
 [[plugins]]
@@ -201,6 +204,9 @@ repo = 'neovim/nvim-lspconfig'
 
 [[plugins]]
 repo = 'williamboman/nvim-lsp-installer'
+lua_add = '''
+  require('plugins.lsp')
+'''
 
 # 日本語関連のあれこれ
 [[plugins]]
