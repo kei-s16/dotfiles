@@ -205,13 +205,7 @@ repo = 'vim-jp/vimdoc-ja'
 [[plugins]]
 repo = 'vim-skk/skkeleton'
 depends = ['denops.vim']
-hook_add = '''
-    call skkeleton#config({ 'globalJisyo': '~/.eskk/SKK-JISYO.L' })
-    call skkeleton#config({ 'userJisyo': '~/.eskk/USER.L' })
-
-    imap <C-j> <Plug>(skkeleton-enable)
-    cmap <C-j> <Plug>(skkeleton-enable)
-'''
+lua_add = "require('plugins.skkeleton')"
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
