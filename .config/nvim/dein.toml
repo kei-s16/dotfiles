@@ -10,6 +10,7 @@ depends = [
     'ddu-ui-ff',
     'ddu-commands.vim'
 ]
+# TODO: lua_addを使うかたちに置きかえる
 hook_add = '''
     call ddu#custom#patch_global(
         \ {
