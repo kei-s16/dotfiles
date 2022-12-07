@@ -12,9 +12,5 @@ require('plugins.dein')
 require('settings.options')
 require('settings.statusline')
 
--- load lua plugin config
-require('plugins.lsp')
-require('plugins.noice')
-
 -- load vimrc files
 vim.opt_global.runtimepath:append(vim.env.HOME .. '/.config/nvim')
