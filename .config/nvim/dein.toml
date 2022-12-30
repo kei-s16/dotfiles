@@ -21,8 +21,8 @@ hook_add = '''
         \       {'name': 'buffer', 'params': {}},
         \   ],
         \   'sourceParams': {
-        \       'file_rec': {'ignoredDirectories': ['.git', 'node_modules', 'vendor']},
-        \       'file_old': {'ignoredDirectories': ['.git', 'node_modules', 'vendor']},
+        \       'file_rec': {'ignoredDirectories': ['.git', 'node_modules', 'vendor', 'target', 'dist']},
+        \       'file_old': {'ignoredDirectories': ['.git', 'node_modules', 'vendor', 'target', 'dist']},
         \   },
         \   'sourceOptions': {
         \     '_': {
