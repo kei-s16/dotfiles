@@ -3,7 +3,6 @@ vim.opt.backspace = {'indent','eol','start'}
 vim.opt.ruler = true
 vim.opt.listchars = 'tab:>-,extends:<,trail:-,eol:<'
 vim.opt.laststatus = 3
-vim.opt.cmdheight = 0
 vim.opt.showcmd = true
 vim.opt.title = true
 vim.opt.hidden = true
