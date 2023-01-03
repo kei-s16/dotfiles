@@ -2,7 +2,8 @@ local keymap = require('utils.keymap').keymap
 
 vim.fn['skkeleton#config']{
   globalJisyo = '~/.eskk/SKK-JISYO.L',
-  userJisyo = '~/.eskk/USER.L'
+  userJisyo = '~/.eskk/USER.L',
+  kanaTable = 'azik'
 }
 
 keymap('i', '<C-j>', '<Plug>(skkeleton-enable)')
