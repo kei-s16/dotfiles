@@ -148,7 +148,8 @@ lua_add = "require('plugins.lsp')"
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo = 'vim-skk/skkeleton'
+repo = 'kei-s16/skkeleton'
+rev = 'feature/azik'
 depends = ['denops.vim']
 lua_add = "require('plugins.skkeleton')"
 
