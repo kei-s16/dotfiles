@@ -148,10 +148,12 @@ lua_add = "require('plugins.lsp')"
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo = 'kei-s16/skkeleton'
-rev = 'feature/azik'
-depends = ['denops.vim']
+repo = 'vim-skk/skkeleton'
+depends = ['denops.vim', 'skkeleton-azik-kanatable']
 lua_add = "require('plugins.skkeleton')"
+
+[[plugins]]
+repo = 'kei-s16/skkeleton-azik-kanatable'
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
@@ -168,3 +170,6 @@ hook_add = '''
 # ファイル依存系
 [[plugins]]
 repo = 'mechatroner/rainbow_csv'
+
+[[plugins]]
+repo = 'LeafCage/vimhelpgenerator'
