@@ -8,3 +8,5 @@ vim.fn['skkeleton#config']{
 
 keymap('i', '<C-j>', '<Plug>(skkeleton-enable)')
 keymap('c', '<C-j>', '<Plug>(skkeleton-enable)')
+keymap('i', '<C-l>', '<Plug>(skkeleton-disable)')
+keymap('c', '<C-l>', '<Plug>(skkeleton-disable)')
