@@ -1,5 +1,8 @@
 local keymap = require('utils.keymap').keymap
 
+vim.fn['skkeleton#azik#add_table']()
+vim.fn['skkeleton#azik#set_keyconfig']()
+
 vim.fn['skkeleton#config']{
   globalJisyo = '~/.eskk/SKK-JISYO.L',
   userJisyo = '~/.eskk/USER.L',
