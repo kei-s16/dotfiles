@@ -83,27 +83,22 @@ zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # エイリアス
+# vimではなくnvimを使うので
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
 
-# Macとそれ以外でlsの出力が違うので統一する
-case ${OSTYPE} in
-	darwin*)
-		alias ls="ls -G"
-		alias la="ls -aG"
-		alias ll="ls -lG"
-		alias lal="ls -laG"
-		;;
-	*)
-		alias ls='ls --color'
-		alias la='ls -a --color'
-		alias ll='ls -l --color'
-		alias lal='ls -la --color'
-		;;
-esac
+# ls結果に色をつける
+alias ls='ls --color'
+alias la='ls -a --color'
+alias ll='ls -l --color'
+alias lal='ls -la --color'
 
 # コマンドの編集にnvimを使う
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey "\C-e" edit-command-line
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
