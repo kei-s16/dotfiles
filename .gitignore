@@ -8,3 +8,4 @@
 !.config/systemd/
 !.config/conky/
 !.config/efm-langserver/
+!.config/bottom/
