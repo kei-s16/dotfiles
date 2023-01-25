@@ -135,6 +135,9 @@ repo = 'vim-denops/denops.vim'
 repo = 'tpope/vim-fugitive'
 lua_add = "require('plugins.fugitive')"
 
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
 # LSP
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
