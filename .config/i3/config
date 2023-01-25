@@ -176,7 +176,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # hide window title
-font pango:monospace 0
+font pango:Rounded M+ 1mn 12
 default_border pixel 1
 default_floating_border pixel 1
 
