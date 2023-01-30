@@ -12,28 +12,10 @@ make
 make clean
 ```
 
-### SKKまわり
-```
-make skk
-```
-
 ### init.elコンパイル
 ```
 make emacs
 ```
 
-## 管理しているもの
-- editor
-  - neovim
-    - goneovim
-  - vim
-  - emacs
-- shell
-  - zsh
-- terminal
-  - urxvt
-  - alacritty
-- ssh
-  - tmux
-- others
-  - neofetch
+## neovim
+[kei-s16/dot-nvim](https://github.com/kei-s16/dot-nvim)に分離してます
