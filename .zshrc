@@ -4,7 +4,6 @@
 export EDITOR=nvim
 
 # 国際化まわり
-export LANG=ja_JP.UTF-8
 export KCODE=u
 
 # vim-likeに操作できるようにする
