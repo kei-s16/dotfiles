@@ -209,3 +209,6 @@ exec_always --no-startup-id conky --config=$HOME/.config/conky/conky.conf
 gaps inner 3
 gaps outer 3
 smart_borders on
+
+# load local configs
+include ~/.config/i3/conf.d/*.conf
