@@ -199,9 +199,6 @@ exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
 bindsym $mod+Shift+s exec flameshot gui
 
-# wallpaper
-exec --no-startup-id "feh --bg-scale --randomize --no-fehbg ~/Pictures/wallpapers/*"
-
 # conky
 exec_always --no-startup-id conky --config=$HOME/.config/conky/conky.conf
 
