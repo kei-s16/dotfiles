@@ -1,0 +1,26 @@
+configuration {
+  /* mode settings */
+  modi: [
+    drun,
+    ssh,
+    window,
+    "display:~/.config/rofi/scripts/display.sh"
+  ];
+
+  /* visual settings */
+  fixed-num-lines: true;
+  sidebar-mode: true;
+  show-icons: true;
+  window-thumbnail: true;
+
+  /* shortcut settings */
+  kb-mode-next: "Tab";
+  kb-mode-previous: "Control+Tab";
+  kb-element-next: ""; /* remove default for kb-mode-next */
+  kb-element-prev: ""; /* remove default for kb-mode-previous */
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+}
