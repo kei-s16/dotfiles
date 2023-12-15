@@ -1,6 +1,11 @@
 configuration {
   /* mode settings */
-  modi: "drun,ssh,window";
+  modi: [
+    drun,
+    ssh,
+    window,
+    "display:~/.config/rofi/scripts/display.sh"
+  ];
 
   /* visual settings */
   fixed-num-lines: true;
