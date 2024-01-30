@@ -1,0 +1,5 @@
+import = [
+"~/.config/alacritty/theme.toml",
+"~/.config/alacritty/fonts.toml",
+"~/.config/alacritty/override.toml",
+]

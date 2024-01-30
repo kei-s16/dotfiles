@@ -1,4 +1,0 @@
-import:
-  - ~/.config/alacritty/theme.yml
-  - ~/.config/alacritty/fonts.yml
-  - ~/.config/alacritty/override.yml
