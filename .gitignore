@@ -4,7 +4,7 @@
 !.config/neofetch/
 !.config/polybar/
 !.config/scoop/
-!.config/systemd/
+!.config/systemd/user/ssh-agent.service
 !.config/conky/
 !.config/efm-langserver/
 !.config/bottom/
