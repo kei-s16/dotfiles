@@ -1,6 +1,7 @@
 .config/*
 !.config/goneovim/
 !.config/i3/
+!.config/sway/
 !.config/neofetch/
 !.config/polybar/
 !.config/scoop/
