@@ -1,5 +1,5 @@
 [font]
 size = 10.0
-normal = { family = "Rounded M+ 1mn" }
-bold = { family = "Rounded M+ 1mn" }
-italic = { family = "Rounded M+ 1mn" }
+normal = { family = "PlemolJP Console" }
+bold = { family = "PlemolJP Console" }
+italic = { family = "PlemolJP Console" }
