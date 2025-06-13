@@ -61,14 +61,11 @@
   <item label="Terminal">
     <action name="Execute" command="alacritty" />
   </item>
-  <item label="Reconfigure">
-    <action name="Reconfigure" />
+  <item label="File browser">
+    <action name="Execute" command="nemo" />
   </item>
-  <item label="Exit">
-    <action name="Exit" />
-  </item>
-  <item label="Poweroff">
-    <action name="Execute" command="systemctl -i poweroff" />
+  <item label="Commands">
+    <action name="Execute" command="rofi -show" />
   </item>
 </menu>
 
@@ -78,12 +75,14 @@
     To create an empty header with no text,
     set label=" ", not label=""
   -->
-  <separator label="custom menu" />
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>
   <item label="Exit">
     <action name="Exit" />
+  </item>
+  <item label="Poweroff">
+    <action name="Execute" command="systemctl -i poweroff" />
   </item>
 </menu>
 

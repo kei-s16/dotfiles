@@ -75,6 +75,7 @@
       <field content="icon" width="5%" />
       <field content="desktop_entry_name" width="30%" />
       <field content="title" width="65%" />
+      <field content="workspace" width="5%" />
       <!--
         Just as for window-rules, you can use 'identifier' or
         'trimmed_identifier' to show the app_id for native wayland clients or
@@ -258,56 +259,20 @@
     <keybind key="W-Return">
       <action name="Execute" command="alacritty" />
     </keybind>
-    <keybind key="A-F3">
-      <action name="Execute" command="bemenu-run" />
-    </keybind>
-    <keybind key="A-F4">
-      <action name="Close" />
-    </keybind>
     <keybind key="W-a">
       <action name="ToggleMaximize" />
-    </keybind>
-    <keybind key="A-Left">
-      <action name="MoveToEdge" direction="left" />
-    </keybind>
-    <keybind key="A-Right">
-      <action name="MoveToEdge" direction="right" />
-    </keybind>
-    <keybind key="A-Up">
-      <action name="MoveToEdge" direction="up" />
-    </keybind>
-    <keybind key="A-Down">
-      <action name="MoveToEdge" direction="down" />
-    </keybind>
-    <keybind key="W-Left">
-      <action name="SnapToEdge" direction="left" />
-    </keybind>
-    <keybind key="W-Right">
-      <action name="SnapToEdge" direction="right" />
-    </keybind>
-    <keybind key="W-Up">
-      <action name="SnapToEdge" direction="up" />
-    </keybind>
-    <keybind key="W-Down">
-      <action name="SnapToEdge" direction="down" />
     </keybind>
     <keybind key="A-Space">
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer sset Master 5%-" />
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -5%" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer sset Master 5%+" />
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +5%" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="amixer sset Master toggle" />
-    </keybind>
-    <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +10%" />
-    </keybind>
-    <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 10%-" />
+      <action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle" />
     </keybind>
   <!-- SnapToRegion via W-Numpad -->
   <!--
