@@ -19,3 +19,4 @@ make emacs
 
 ## neovim
 [kei-s16/dot-nvim](https://github.com/kei-s16/dot-nvim)に分離してます
+
