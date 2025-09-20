@@ -97,3 +97,4 @@ alias lal='ls -la --color'
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey "\C-e" edit-command-line
+
