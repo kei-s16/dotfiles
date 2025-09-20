@@ -16,11 +16,15 @@ mako >/dev/null 2>&1 &
 # `wlr-randr --output <whatever> --off` because this re-arranges views
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-swayidle -w \
-	timeout 300 'swaylock -f -L -i /usr/share/backgrounds/archlinux/small.png' \
-	timeout 600 'wlopm --off \*' \
-	resume 'wlopm --on \*' \
-	before-sleep 'swaylock -f -L -i /usr/share/backgrounds/archlinux/small.png' >/dev/null 2>&1 &
+#swayidle -w \
+#	timeout 300 'swaylock -f -L -i /usr/share/backgrounds/archlinux/small.png' \
+#	timeout 600 'wlopm --off \*' \
+#	resume 'wlopm --on \*' \
+#	before-sleep 'swaylock -f -L -i /usr/share/backgrounds/archlinux/small.png' >/dev/null 2>&1 &
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS='@im=fcitx'
 
 fcitx5 &
 
