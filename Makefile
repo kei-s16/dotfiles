@@ -35,10 +35,13 @@ i3:
 
 .PHONY: sway
 sway:
+	unlink $(HOME)/.config/waybar
 	@$(foreach configdir, $(SWAY_DIRS), ln -sfnv $(abspath $(configdir)) "$(HOME)/$(configdir)";)
+	ln -sfnv $(abspath .config/waybar-sway) "$(HOME)/.config/waybar"
 
 .PHONY: labwc
 labwc:
+	unlink $(HOME)/.config/waybar
 	@$(foreach configdir, $(LABWC_DIRS), ln -sfnv $(abspath $(configdir)) "$(HOME)/$(configdir)";)
 	ln -sfnv $(abspath .config/waybar-labwc) "$(HOME)/.config/waybar"
 
