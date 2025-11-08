@@ -19,6 +19,7 @@ install:
 	mkdir -p ${HOME}/.config
 	@$(foreach dotfile, $(DOT_FILES), ln -sfnv $(abspath $(dotfile)) "$(HOME)/$(dotfile)";)
 	@$(foreach configdir, $(CONFIG_DIRS), ln -sfnv $(abspath $(configdir)) "$(HOME)/$(configdir)";)
+	touch ${HOME}/.w3m/history
 
 .PHONY: emacs
 emacs:
