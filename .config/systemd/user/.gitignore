@@ -1,2 +1,4 @@
 *.wants
 pipewire*
+denops-shared-server.service
+
